@@ -911,3 +911,215 @@ h3 { font-size: clamp(1.15rem, 3.2vw, 1.35rem); }
 .badge-basic { background: #f0f0f0; color: #555; }
 .badge-improved { background: #fff3e0; color: #b76e00; }
 .badge-advanced { background: var(--pink-soft); color: var(--pink-dark); }
+
+
+/* ══════════════════════════════════════════
+   ADDITIONS — about / conclusion
+   ══════════════════════════════════════════ */
+
+/* ── ABOUT PAGE ── */
+.page-hero--about {
+  padding: 56px 0 48px;
+  background: linear-gradient(135deg, #fff5f9 0%, #fff0f5 50%, #fff 100%);
+}
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Badges nhãn tính cách */
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: white;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--pink-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Avatar vòng xoay */
+.about-avatar-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  flex-shrink: 0;
+}
+.about-avatar-frame {
+  position: relative;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  overflow: visible;
+}
+.about-avatar-frame img {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow);
+  display: block;
+}
+.avatar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(194,24,91,.2);
+}
+.avatar-ring--1 {
+  width: 210px; height: 210px;
+  top: -15px; left: -15px;
+  animation: spin 12s linear infinite;
+}
+.avatar-ring--2 {
+  width: 240px; height: 240px;
+  top: -30px; left: -30px;
+  border-color: rgba(233,30,140,.12);
+  animation: spin 20s linear infinite reverse;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Prose card — icon nổi góc trên trái */
+.prose-card--decorated {
+  position: relative;
+  padding-top: 44px;
+}
+.prose-card-icon {
+  position: absolute;
+  top: -18px; left: 28px;
+  width: 48px; height: 48px;
+  background: var(--grad-pink);
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 20px rgba(194,24,91,.3);
+}
+
+/* ── CONCLUSION PAGE ── */
+.page-hero--conclusion {
+  padding: 60px 0 48px;
+  background: linear-gradient(135deg, #fff5f9 0%, #fff0f5 50%, #fff 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.conclusion-hero-deco {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(252,228,236,.5) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(233,30,140,.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.conclusion-hero-content { position: relative; z-index: 1; }
+
+/* Emoji floating */
+.conclusion-hero-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  display: block;
+  animation: floatEmoji 3s ease-in-out infinite;
+}
+@keyframes floatEmoji {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* Mini stats gradient */
+.conclusion-mini-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.mini-stat { text-align: center; }
+.mini-stat-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: var(--grad-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.mini-stat-label {
+  display: block;
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 4px;
+}
+.mini-stat-sep {
+  font-size: 1.5rem;
+  color: var(--line);
+  user-select: none;
+}
+
+/* Highlight quote */
+.highlight-quote {
+  background: linear-gradient(135deg, #fff5f9, #fce4ec);
+  border-left: 4px solid var(--pink-dark);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 18px;
+  margin: 0 0 18px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--pink-dark);
+  font-size: 1rem;
+}
+
+/* Two-column insight */
+.two-col-insight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+.insight-item {
+  border-radius: 16px;
+  padding: 18px;
+}
+.insight-item--love {
+  background: linear-gradient(135deg, #fff5f9, #fce4ec);
+  border: 1px solid var(--line);
+}
+.insight-item--challenge {
+  background: linear-gradient(135deg, #fff9f0, #ffeedd);
+  border: 1px solid #f8d9c0;
+}
+.insight-header {
+  font-weight: 700;
+  font-size: .82rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.insight-item p { font-size: .88rem; color: var(--muted); margin: 0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 820px) {
+  .about-hero-grid { grid-template-columns: 1fr; }
+  .about-avatar-wrap { margin: 0 auto; }
+  .two-col-insight { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .conclusion-mini-stats { gap: 14px; }
+  .mini-stat-sep { display: none; }
+}
